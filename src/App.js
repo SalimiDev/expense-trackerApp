@@ -4,9 +4,9 @@ import Balance from './components/Balance';
 
 function App() {
     return (
-        <div className='App'>
+        <div className='w-screen h-screen flex flex-col justify-center items-center font-Lato bg-slate-800'>
             <Header />
-            <div className='Container'>
+            <div className='w-72 h-fit '>
                 <Balance />
             </div>
         </div>
