@@ -1,6 +1,7 @@
 import Header from './components/Header';
 import Balance from './components/Balance';
 import IncomeExpenses from './components/IncomeExpenses';
+import TransactionList from './components/TransactionList';
 
 function App() {
     return (
@@ -9,6 +10,7 @@ function App() {
             <div className='w-72 h-fit '>
                 <Balance />
                 <IncomeExpenses />
+                <TransactionList />
             </div>
         </div>
     );
