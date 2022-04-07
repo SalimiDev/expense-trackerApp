@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { GlobalContext } from '../context/GlobalState';
 
 const Transaction = ({ transaction }) => {
-    const { text, amount } = transaction;
+    const { deleteTransaction } = useContext(GlobalContext);
+    const { id, text, amount } = transaction;
     const sign = amount < 0 ? '-' : '+';
     return (
         <li
@@ -13,7 +15,11 @@ const Transaction = ({ transaction }) => {
             <span>
                 {sign}${Math.abs(amount)}
             </span>
-            <button className='absolute bg-red-500 cursor-pointer w-full h-8  left-0 opacity-0 hover:opacity-60'>X</button>
+            <button
+                onClick={() => deleteTransaction(id)}
+                className='absolute bg-red-500 cursor-pointer w-full h-8  left-0 opacity-0 hover:opacity-60'>
+                X
+            </button>
         </li>
     );
 };
