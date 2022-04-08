@@ -4,6 +4,7 @@ import { GlobalContext } from '../context/GlobalState';
 const Transaction = ({ transaction }) => {
     const { deleteTransaction } = useContext(GlobalContext);
     const { id, text, amount } = transaction;
+    //set sign to show amount red if that was lower than 0 and show green if that was higher than 0
     const sign = amount < 0 ? '-' : '+';
     return (
         <li

@@ -2,10 +2,12 @@ import React, { useState, useContext } from 'react';
 import { GlobalContext } from '../context/GlobalState';
 
 const AddTransaction = () => {
+    //context
     const { addTransaction } = useContext(GlobalContext);
+    //state
     const [text, setText] = useState([]);
     const [amount, setAmount] = useState(0);
-
+    //handle to add new transaction
     const onSubmit = e => {
         e.preventDefault();
         const newTransaction = {
@@ -36,7 +38,6 @@ const AddTransaction = () => {
                     <label htmlFor='amount'>
                         Amount
                         <br />
-                        (negative-expense,positive-income)
                     </label>
                     <input
                         className='text-black p-1'
